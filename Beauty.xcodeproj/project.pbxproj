@@ -22,6 +22,11 @@
 		9DE1F3D71F03EB33006B119C /* YJHomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3D61F03EB33006B119C /* YJHomeItem.swift */; };
 		9DE1F3D91F03F76F006B119C /* YJSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3D81F03F76F006B119C /* YJSearchResult.swift */; };
 		9DE1F3DB1F03F7F0006B119C /* YJProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3DA1F03F7F0006B119C /* YJProduct.swift */; };
+		9DE1F3DD1F04064E006B119C /* YJProductDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3DC1F04064E006B119C /* YJProductDetailData.swift */; };
+		9DE1F3DF1F040952006B119C /* YJComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3DE1F040952006B119C /* YJComment.swift */; };
+		9DE1F3E11F040CA1006B119C /* YJCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3E01F040CA1006B119C /* YJCollection.swift */; };
+		9DE1F3E31F040CBD006B119C /* YJCollectionPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3E21F040CBD006B119C /* YJCollectionPost.swift */; };
+		9DE1F3E51F040CD2006B119C /* YJGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3E41F040CD2006B119C /* YJGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		9DE1F3D61F03EB33006B119C /* YJHomeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJHomeItem.swift; sourceTree = "<group>"; };
 		9DE1F3D81F03F76F006B119C /* YJSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJSearchResult.swift; sourceTree = "<group>"; };
 		9DE1F3DA1F03F7F0006B119C /* YJProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJProduct.swift; sourceTree = "<group>"; };
+		9DE1F3DC1F04064E006B119C /* YJProductDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJProductDetailData.swift; sourceTree = "<group>"; };
+		9DE1F3DE1F040952006B119C /* YJComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJComment.swift; sourceTree = "<group>"; };
+		9DE1F3E01F040CA1006B119C /* YJCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJCollection.swift; sourceTree = "<group>"; };
+		9DE1F3E21F040CBD006B119C /* YJCollectionPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJCollectionPost.swift; sourceTree = "<group>"; };
+		9DE1F3E41F040CD2006B119C /* YJGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +169,9 @@
 		9DE1F3BE1F036D70006B119C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9DE1F3E01F040CA1006B119C /* YJCollection.swift */,
+				9DE1F3E21F040CBD006B119C /* YJCollectionPost.swift */,
+				9DE1F3E41F040CD2006B119C /* YJGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				9DE1F3DA1F03F7F0006B119C /* YJProduct.swift */,
+				9DE1F3DC1F04064E006B119C /* YJProductDetailData.swift */,
+				9DE1F3DE1F040952006B119C /* YJComment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -408,15 +423,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE1F3E31F040CBD006B119C /* YJCollectionPost.swift in Sources */,
 				9DE1F3B71F0367DB006B119C /* YJConst.swift in Sources */,
 				9DE1F3D51F03DFFB006B119C /* YJNetworkTool.swift in Sources */,
 				9DE1F3A61F035DB5006B119C /* ViewController.swift in Sources */,
 				9DE1F3D91F03F76F006B119C /* YJSearchResult.swift in Sources */,
+				9DE1F3E11F040CA1006B119C /* YJCollection.swift in Sources */,
 				9DE1F3BB1F036979006B119C /* YJTabBarController.swift in Sources */,
+				9DE1F3DF1F040952006B119C /* YJComment.swift in Sources */,
+				9DE1F3E51F040CD2006B119C /* YJGroup.swift in Sources */,
 				9DE1F3D71F03EB33006B119C /* YJHomeItem.swift in Sources */,
 				9DE1F3DB1F03F7F0006B119C /* YJProduct.swift in Sources */,
 				9DE1F3D11F03DC47006B119C /* YJChannel.swift in Sources */,
 				9DE1F3CF1F03DA4B006B119C /* YJHomeController.swift in Sources */,
+				9DE1F3DD1F04064E006B119C /* YJProductDetailData.swift in Sources */,
 				9DE1F3A41F035DB5006B119C /* AppDelegate.swift in Sources */,
 				9DE1F3CD1F036DA8006B119C /* YJBaseViewController.swift in Sources */,
 			);
