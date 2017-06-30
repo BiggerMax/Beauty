@@ -8,6 +8,12 @@
 
 import UIKit
 
+
+enum YJOtherLoginType: Int {
+	case weibo = 100
+	case weChat = 101
+	case qq = 102
+}
 let BASE_URL =	"http://api.dantangapp.com/"
 
 let FIRSTLAUNCH = "firstLaunch"

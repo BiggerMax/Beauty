@@ -17,6 +17,15 @@ class YJTabBarController: UITabBarController {
 	}
 	
 	private func addChildViewControllers(){
-		addChildViewController(childViewController:)
+		addChildViewController(childController:YJHomeViewController(),titile:"首页",imageName:"TabBar_home_23x23_")
+		
+	}
+	private func addChildViewController(childController:UIViewController,titile: String,imageName:String){
+		childController.tabBarItem.image = UIImage(named:imageName)
+		childController.tabBarItem.selectedImage = UIImage(named: imageName + "selected")
+		childController.title = titile
+		let nacVC = YJNavigationController(rootViewController :childController)
+		addChildViewController(nacVC)
+		
 	}
 }

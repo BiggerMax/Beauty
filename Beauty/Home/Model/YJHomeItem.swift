@@ -9,6 +9,7 @@
 import UIKit
 
 class YJHomeItem: NSObject {
+	
 	var content_url: String?
 	var cover_image_url: String?
 	var created_at: Int?
@@ -24,8 +25,8 @@ class YJHomeItem: NSObject {
 	var template: String?
 	var updated_at: Int?
 	var url: String?
-
-	init(dict: [String:AnyObject]) {
+	
+	init(dict: [String: AnyObject]) {
 		super.init()
 		content_url = dict["content_url"] as? String
 		cover_image_url = dict["cover_image_url"] as? String
@@ -42,6 +43,5 @@ class YJHomeItem: NSObject {
 		template = dict["template"] as? String
 		updated_at = dict["updated_at"] as? Int
 		url = dict["url"] as? String
-
 	}
 }

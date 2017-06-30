@@ -37,7 +37,7 @@ class YJNetworkTool: NSObject {
 					if let items = data!["items"]?.arrayObject{
 						var homeItems = [YJHomeItem]()
 						for item in items{
-							let homeItem = YJHomItem(dict: item as! [String: AnyObject])
+							let homeItem = YJHomeItem(dict: item as! [String: AnyObject])
 							homeItems.append(homeItem)
 						}
 						finished(homeItems)
@@ -59,17 +59,22 @@ class YJNetworkTool: NSObject {
 					return
 				}
 				if let value = response.result.value{
-					let dict = JSON(value).dictionary
-					let code = dict["code"]?.intValue
-					let message = dict["message"]?.stringValue
+					let dict = JSON(value)
+					let code = dict["code"].intValue
+					let message = dict["message"].stringValue
 					guard code == 200 else{
 						SVProgressHUD.showInfo(withStatus: message)
 						return
 					}
 					SVProgressHUD.dismiss()
-					let data = dict["data"]?.dictionary
-					if let hot_words = dict["hot_words"]?.arrayObject{
-						finished(hot_words as! [String])
+					let data = dict["data"].dictionary
+					if let channels = data!["channels"]?.arrayObject{
+						var yj_channels = [YJChannel]()
+						for channel in channels{
+							let yj_channel = YJChannel(dict: channel as! [String :AnyObject])
+							yj_channels.append(yj_channel)
+						}
+						finished(yj_channels)
 					}
 					
 				}
@@ -95,7 +100,7 @@ class YJNetworkTool: NSObject {
 				}
 				if let value = response.result.value{
 					let dic = JSON(value)
-					let code = dic["code"]!.intValue
+					let code = dic["code"].intValue
 					let message = dic["message"].stringValue
 					guard code == 200 else{
 						SVProgressHUD.show(withStatus: message)
@@ -103,10 +108,10 @@ class YJNetworkTool: NSObject {
 					}
 					SVProgressHUD.dismiss()
 					let data = dic["data"].dictionary
-					if let items = data["items"]?.arrayObject{
+					if let items = data!["items"]?.arrayObject{
 						var results = [YJSearchResult]()
 						for item in items{
-							let result = YJSearchResult(dict:item as? [String:AnyObject])
+							let result = YJSearchResult(dict:item as! [String:AnyObject])
 							results.append(result)
 						}
 					}
@@ -138,12 +143,12 @@ class YJNetworkTool: NSObject {
 					}
 					SVProgressHUD.dismiss()
 					if let data = dict["data"].dictionary{
-					if let items = dict["items"].arrayObject{
+					if let items = data["items"]?.arrayObject{
 						var products = [YJProduct]()
 						for item in items{
 							let itemDict = item as! [String : AnyObject]
 							if let itemData = itemDict["data"]{
-								let product = YJProduct(dict: itemData as! [String])
+								let product = YJProduct(dict: itemData as! [String:AnyObject])
 								products.append(product)
 							}
 						}
@@ -174,9 +179,9 @@ class YJNetworkTool: NSObject {
 						}
 						SVProgressHUD.dismiss()
 						if let data = dict["data"].dictionaryObject{
-							let productDetail = YJProductDetailData(dict: data as! [String : AnyObject])
+							let productDetail = YJProductDetailData(dict: data as [String : AnyObject])
 							finished(productDetail)
-						}
+						
 					}
 		}
 	}
@@ -204,10 +209,10 @@ class YJNetworkTool: NSObject {
 					}
 					SVProgressHUD.dismiss()
 					if let data = dict["data"].dictionary{
-						if let comment  = data["comment"]?.arrayObject{
+						if let commentData = data["comment"]?.arrayObject{
 							var comments = [YJComment]()
-							for item in comments{
-								let comment = YJComment(dict: item as! [String : AnyObject])
+							for item in commentData{
+								let comment = YJComment(dict: item as! [String: AnyObject])
 								comments.append(comment)
 							}
 							finished(comments)
@@ -217,7 +222,7 @@ class YJNetworkTool: NSObject {
 		}
 	}
 	/// 分类界面 顶部 专题合集
-	func loadCategoryCollection(limit: Int, finished:@escaping (_ collections: [YMCollection]) -> ()) {
+	func loadCategoryCollection(limit: Int, finished:@escaping (_ collections: [YJCollection]) -> ()) {
 		SVProgressHUD.show(withStatus: "正在加载...")
 		let url = BASE_URL + "v1/collections"
 		let params = ["limit": limit,
@@ -233,16 +238,16 @@ class YJNetworkTool: NSObject {
 					let dict = JSON(value)
 					let code = dict["code"].intValue
 					let message = dict["message"].stringValue
-					guard code == RETURN_OK else {
+					guard code == 200 else {
 						SVProgressHUD.showInfo(withStatus: message)
 						return
 					}
 					SVProgressHUD.dismiss()
 					if let data = dict["data"].dictionary {
 						if let collectionsData = data["collections"]?.arrayObject {
-							var collections = [YMCollection]()
+							var collections = [YJCollection]()
 							for item in collectionsData {
-								let collection = YMCollection(dict: item as! [String: AnyObject])
+								let collection = YJCollection(dict: item as! [String: AnyObject])
 								collections.append(collection)
 							}
 							finished(collections)
@@ -253,7 +258,7 @@ class YJNetworkTool: NSObject {
 	}
 	
 	/// 顶部 专题合集 -> 专题列表
-	func loadCollectionPosts(id: Int, finished:@escaping (_ posts: [YMCollectionPost]) -> ()) {
+	func loadCollectionPosts(id: Int, finished:@escaping (_ posts: [YJCollectionPost]) -> ()) {
 		SVProgressHUD.show(withStatus: "正在加载...")
 		let url = BASE_URL + "v1/collections/\(id)/posts"
 		let params = ["gender": 1,
@@ -271,16 +276,16 @@ class YJNetworkTool: NSObject {
 					let dict = JSON(value)
 					let code = dict["code"].intValue
 					let message = dict["message"].stringValue
-					guard code == RETURN_OK else {
+					guard code == 200 else {
 						SVProgressHUD.show(withStatus: message)
 						return
 					}
 					SVProgressHUD.dismiss()
 					if let data = dict["data"].dictionary {
 						if let postsData = data["posts"]?.arrayObject {
-							var posts = [YMCollectionPost]()
+							var posts = [YJCollectionPost]()
 							for item in postsData {
-								let post = YMCollectionPost(dict: item as! [String: AnyObject])
+								let post = YJCollectionPost(dict: item as! [String: AnyObject])
 								posts.append(post)
 							}
 							finished(posts)
@@ -305,7 +310,7 @@ class YJNetworkTool: NSObject {
 					let dict = JSON(value)
 					let code = dict["code"].intValue
 					let message = dict["message"].stringValue
-					guard code == RETURN_OK else {
+					guard code == 200 else {
 						SVProgressHUD.show(withStatus: message)
 						return
 					}
@@ -316,11 +321,11 @@ class YJNetworkTool: NSObject {
 							// outGroups 是一个二维数组
 							var outGroups = [AnyObject]()
 							for channel_group in channel_groups {
-								var inGroups = [YMGroup]()
+								var inGroups = [YJGroup]()
 								let channel_group_dict = channel_group as! [String: AnyObject]
 								let channels = channel_group_dict["channels"] as! [AnyObject]
 								for channel in channels {
-									let group = YMGroup(dict: channel as! [String: AnyObject])
+									let group = YJGroup(dict: channel as! [String: AnyObject])
 									inGroups.append(group)
 								}
 								outGroups.append(inGroups as AnyObject)
@@ -333,7 +338,7 @@ class YJNetworkTool: NSObject {
 	}
 	
 	/// 底部 风格品类 -> 列表
-	func loadStylesOrCategoryInfo(id: Int, finished:@escaping (_ items: [YMCollectionPost]) -> ()) {
+	func loadStylesOrCategoryInfo(id: Int, finished:@escaping (_ items: [YJCollectionPost]) -> ()) {
 		SVProgressHUD.show(withStatus: "正在加载...")
 		let url = BASE_URL + "v1/channels/\(id)/items"
 		let params = ["limit": 20,
@@ -349,22 +354,23 @@ class YJNetworkTool: NSObject {
 					let dict = JSON(value)
 					let code = dict["code"].intValue
 					let message = dict["message"].stringValue
-					guard code == RETURN_OK else {
+					guard code == 200 else {
 						SVProgressHUD.show(withStatus: message)
 						return
 					}
 					SVProgressHUD.dismiss()
 					if let data = dict["data"].dictionary {
 						if let itemsData = data["items"]?.arrayObject {
-							var items = [YMCollectionPost]()
+							var items = [YJCollectionPost]()
 							for item in itemsData {
-								let post = YMCollectionPost(dict: item as! [String: AnyObject])
+								let post = YJCollectionPost(dict: item as! [String: AnyObject])
 								items.append(post)
 							}
 							finished(items)
 						}
 					}
 				}
+		}
 		}
 	}
 

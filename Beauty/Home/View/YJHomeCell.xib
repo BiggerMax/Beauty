@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="YJHomeCell" customModule="Beauty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jid-Nh-rc6" userLabel="PlaceholderBtn">
+                        <rect key="frame" x="144" y="67" width="31" height="26"/>
+                        <state key="normal" image="PlaceHolderImage_small_31x26_"/>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NKD-12-Kdr" userLabel="BgImageVIew">
+                        <rect key="frame" x="8" y="8" width="304" height="144"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNc-eY-RkB" userLabel="TitleLabel">
+                        <rect key="frame" x="13" y="125.5" width="44" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTK-f9-p22" userLabel="FavoriteBtn">
+                        <rect key="frame" x="276" y="18" width="26" height="25"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="bLa-Yc-xIb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="0" image="Feed_FavoriteIcon_17x17_"/>
+                        <connections>
+                            <action selector="favoriteButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tCq-bn-Jmd"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DTK-f9-p22" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="8BP-qM-1aZ"/>
+                    <constraint firstItem="Jid-Nh-rc6" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="9oi-sc-IHr"/>
+                    <constraint firstItem="Jid-Nh-rc6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IlQ-vu-X4c"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="cNc-eY-RkB" secondAttribute="bottom" constant="5" id="TVL-fB-Ytz"/>
+                    <constraint firstItem="NKD-12-Kdr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Ygq-rC-qlv"/>
+                    <constraint firstItem="NKD-12-Kdr" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="grr-qz-TNG"/>
+                    <constraint firstItem="NKD-12-Kdr" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="hi2-bg-Bz1"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="DTK-f9-p22" secondAttribute="trailing" constant="10" id="mTr-Sy-Ida"/>
+                    <constraint firstItem="NKD-12-Kdr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="pme-cb-Jg6"/>
+                    <constraint firstItem="cNc-eY-RkB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="wbS-Vk-tsf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="BgImageView" destination="NKD-12-Kdr" id="UuD-62-g29"/>
+                <outlet property="favoriteBtn" destination="DTK-f9-p22" id="ZCf-7E-9B2"/>
+                <outlet property="placeholderBtn" destination="Jid-Nh-rc6" id="mFw-aV-Ksr"/>
+                <outlet property="titleLabel" destination="cNc-eY-RkB" id="Zmc-kK-1L0"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Feed_FavoriteIcon_17x17_" width="17" height="17"/>
+        <image name="PlaceHolderImage_small_31x26_" width="31" height="26"/>
+    </resources>
+</document>

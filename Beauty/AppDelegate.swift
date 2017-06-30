@@ -16,13 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
-		var window:UIWindow?
 		window = UIWindow(frame: UIScreen.main.bounds)
 		window?.makeKeyAndVisible()
 		if !UserDefaults.standard.bool(forKey: FIRSTLAUNCH) {
-			//window?.rootViewController =
+			window?.rootViewController = YJNewfeatureController()
+			UserDefaults.standard.set(true, forKey: FIRSTLAUNCH)
 		}else{
-			window?.rootViewController = COLOR(r: 245, g: 90, b: 93, a: 1/0)
+			window?.rootViewController = YJTabBarController()
 		}
 		return true
 	}
