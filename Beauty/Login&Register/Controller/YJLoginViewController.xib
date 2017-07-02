@@ -15,6 +15,7 @@
                 <outlet property="loginBtn" destination="Oah-gm-CDk" id="eEA-dz-P9R"/>
                 <outlet property="mobileTF" destination="Tya-OH-Fee" id="0bU-vq-MMf"/>
                 <outlet property="pswTF" destination="z0b-NZ-9m3" id="H1k-0f-CZb"/>
+                <outlet property="view" destination="ogU-DX-P8B" id="xES-VD-h2k"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

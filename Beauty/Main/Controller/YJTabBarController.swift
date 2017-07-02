@@ -18,6 +18,9 @@ class YJTabBarController: UITabBarController {
 	
 	private func addChildViewControllers(){
 		addChildViewController(childController:YJHomeViewController(),titile:"首页",imageName:"TabBar_home_23x23_")
+			addChildViewController(childController: YJDanpingController(), titile: "单品", imageName: "TabBar_gift_23x23_")
+		addChildViewController(childController: YJCategoryController(), titile: "分类", imageName: "TabBar_category_23x23_")
+		addChildViewController(childController: YJMyViewController(), titile: "我的", imageName: "TabBar_me_boy_23x23_")
 		
 	}
 	private func addChildViewController(childController:UIViewController,titile: String,imageName:String){

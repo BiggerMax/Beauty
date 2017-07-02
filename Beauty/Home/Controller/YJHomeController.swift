@@ -141,7 +141,8 @@ class YJHomeViewController: YJBaseViewController,UIScrollViewDelegate {
 		navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"Feed_SearchBtn_18x18_"), style: .plain, target: self, action: #selector(rightBtnClicked))
 	}
 	func rightBtnClicked(){
-		
+		let searchController = YJSearchController()
+		navigationController?.pushViewController(searchController, animated: true)
 	}
 	
 	//MARK: -- UIScrollViewDelegate

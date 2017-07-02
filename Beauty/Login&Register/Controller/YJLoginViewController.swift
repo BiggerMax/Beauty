@@ -18,7 +18,7 @@ class YJLoginViewController: YJBaseViewController {
 	@IBOutlet weak var forgetBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		self .setupBarButtonItem()
     }
 	
     override func didReceiveMemoryWarning() {

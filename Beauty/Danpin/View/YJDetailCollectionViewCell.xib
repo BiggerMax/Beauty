@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zuR-pv-RZl" customClass="YJDetailCollectionViewCell" customModule="Beauty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="206" height="273"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="206" height="273"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr1-aU-nZi">
+                        <rect key="frame" x="87" y="124" width="31" height="26"/>
+                        <state key="normal" image="PlaceHolderImage_small_31x26_"/>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mtW-G1-tah">
+                        <rect key="frame" x="0.0" y="0.0" width="206" height="273"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="mtW-G1-tah" secondAttribute="trailing" id="9y0-0b-MG2"/>
+                <constraint firstItem="Xr1-aU-nZi" firstAttribute="centerX" secondItem="zuR-pv-RZl" secondAttribute="centerX" id="BoA-eU-PX4"/>
+                <constraint firstAttribute="bottom" secondItem="mtW-G1-tah" secondAttribute="bottom" id="Ufh-LJ-VaG"/>
+                <constraint firstItem="Xr1-aU-nZi" firstAttribute="centerY" secondItem="zuR-pv-RZl" secondAttribute="centerY" id="YCY-cC-2SX"/>
+                <constraint firstItem="mtW-G1-tah" firstAttribute="top" secondItem="zuR-pv-RZl" secondAttribute="top" id="aq7-VK-mQ3"/>
+                <constraint firstItem="mtW-G1-tah" firstAttribute="leading" secondItem="zuR-pv-RZl" secondAttribute="leading" id="f2R-jH-6ta"/>
+            </constraints>
+            <size key="customSize" width="206" height="273"/>
+            <connections>
+                <outlet property="bgImageView" destination="mtW-G1-tah" id="nlw-IH-tEX"/>
+                <outlet property="placeholderBtn" destination="Xr1-aU-nZi" id="yeY-S1-EhX"/>
+            </connections>
+            <point key="canvasLocation" x="180" y="198.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="PlaceHolderImage_small_31x26_" width="31" height="26"/>
+    </resources>
+</document>

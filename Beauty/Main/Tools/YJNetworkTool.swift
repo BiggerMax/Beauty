@@ -81,6 +81,35 @@ class YJNetworkTool: NSObject {
 		}
 	}
 	
+	func loadHotWords(finished:@escaping(_ words: [String]) -> ()){
+		SVProgressHUD.show(withStatus: "正在加载...")
+		let url = BASE_URL + "v1/search/hot_words"
+		Alamofire
+			.request(url)
+			.responseJSON { (response) in
+				guard response.result.isSuccess else {
+					SVProgressHUD.showError(withStatus: "加载失败...")
+					return
+				}
+				if let value = response.result.value {
+					let dict = JSON(value)
+					let code = dict["code"].intValue
+					let message = dict["message"].stringValue
+					guard code == 200 else {
+						SVProgressHUD.showInfo(withStatus: message)
+						return
+					}
+					SVProgressHUD.dismiss()
+					if let data = dict["data"].dictionary {
+						if let hot_words = data["hot_words"]?.arrayObject {
+							finished(hot_words as! [String])
+						}
+					}
+				}
+		}
+
+	}
+	
 	//根据搜索条件进行搜索
 	func loadSearchResult(keyword: String,sort : String,finished:@escaping(_ results:[YJSearchResult]) -> ()) {
 		SVProgressHUD.show(withStatus: "正在加载...")
