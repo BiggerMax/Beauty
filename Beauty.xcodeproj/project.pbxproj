@@ -32,6 +32,18 @@
 		9D4C21AD1F08DCBF00B1685A /* YJProductDetailTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21AC1F08DCBF00B1685A /* YJProductDetailTopView.swift */; };
 		9D4C21B01F08DF1200B1685A /* YJDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21AE1F08DF1200B1685A /* YJDetailCollectionViewCell.swift */; };
 		9D4C21B11F08DF1200B1685A /* YJDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C21AF1F08DF1200B1685A /* YJDetailCollectionViewCell.xib */; };
+		9D4C21B31F0936EE00B1685A /* YJProductBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21B21F0936EE00B1685A /* YJProductBottomView.swift */; };
+		9D4C21B51F09381C00B1685A /* YJDetailChoiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21B41F09381C00B1685A /* YJDetailChoiceButtonView.swift */; };
+		9D4C21B91F09395100B1685A /* YJDetailChoiceButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C21B81F09395100B1685A /* YJDetailChoiceButtonView.xib */; };
+		9D4C21BC1F093D1F00B1685A /* YJCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21BA1F093D1F00B1685A /* YJCommentCell.swift */; };
+		9D4C21BD1F093D1F00B1685A /* YJCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C21BB1F093D1F00B1685A /* YJCommentCell.xib */; };
+		9D4C21BF1F0A395600B1685A /* YJTmallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21BE1F0A395600B1685A /* YJTmallViewController.swift */; };
+		9D4C21C11F0A4BDA00B1685A /* YJActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21C01F0A4BDA00B1685A /* YJActionSheet.swift */; };
+		9D4C21C31F0A50DB00B1685A /* YJShareButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21C21F0A50DB00B1685A /* YJShareButtonView.swift */; };
+		9D4C21C61F0A52E700B1685A /* YJVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21C51F0A52E700B1685A /* YJVerticalButton.swift */; };
+		9D4C21C81F0A998D00B1685A /* YJSortTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21C71F0A998D00B1685A /* YJSortTableView.swift */; };
+		9D4C21CD1F0A9E9100B1685A /* YJSortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21CB1F0A9E9100B1685A /* YJSortCell.swift */; };
+		9D4C21CE1F0A9E9100B1685A /* YJSortCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C21CC1F0A9E9100B1685A /* YJSortCell.xib */; };
 		9DE1F3A41F035DB5006B119C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3A31F035DB5006B119C /* AppDelegate.swift */; };
 		9DE1F3A61F035DB5006B119C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3A51F035DB5006B119C /* ViewController.swift */; };
 		9DE1F3A91F035DB6006B119C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE1F3A71F035DB6006B119C /* Main.storyboard */; };
@@ -81,6 +93,18 @@
 		9D4C21AC1F08DCBF00B1685A /* YJProductDetailTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJProductDetailTopView.swift; sourceTree = "<group>"; };
 		9D4C21AE1F08DF1200B1685A /* YJDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D4C21AF1F08DF1200B1685A /* YJDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YJDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		9D4C21B21F0936EE00B1685A /* YJProductBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJProductBottomView.swift; sourceTree = "<group>"; };
+		9D4C21B41F09381C00B1685A /* YJDetailChoiceButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJDetailChoiceButtonView.swift; sourceTree = "<group>"; };
+		9D4C21B81F09395100B1685A /* YJDetailChoiceButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YJDetailChoiceButtonView.xib; sourceTree = "<group>"; };
+		9D4C21BA1F093D1F00B1685A /* YJCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJCommentCell.swift; sourceTree = "<group>"; };
+		9D4C21BB1F093D1F00B1685A /* YJCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YJCommentCell.xib; sourceTree = "<group>"; };
+		9D4C21BE1F0A395600B1685A /* YJTmallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJTmallViewController.swift; sourceTree = "<group>"; };
+		9D4C21C01F0A4BDA00B1685A /* YJActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJActionSheet.swift; sourceTree = "<group>"; };
+		9D4C21C21F0A50DB00B1685A /* YJShareButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJShareButtonView.swift; sourceTree = "<group>"; };
+		9D4C21C51F0A52E700B1685A /* YJVerticalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJVerticalButton.swift; sourceTree = "<group>"; };
+		9D4C21C71F0A998D00B1685A /* YJSortTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJSortTableView.swift; sourceTree = "<group>"; };
+		9D4C21CB1F0A9E9100B1685A /* YJSortCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJSortCell.swift; sourceTree = "<group>"; };
+		9D4C21CC1F0A9E9100B1685A /* YJSortCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YJSortCell.xib; sourceTree = "<group>"; };
 		9DE1F3A01F035DB5006B119C /* Beauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE1F3A31F035DB5006B119C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DE1F3A51F035DB5006B119C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +191,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9D4C21C41F0A52D400B1685A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D4C21C51F0A52E700B1685A /* YJVerticalButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9DE1F3971F035DB5006B119C = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +248,7 @@
 		9DE1F3B81F036952006B119C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9D4C21C41F0A52D400B1685A /* View */,
 				9DE1F3D21F03DFDE006B119C /* Category */,
 				9DE1F3D31F03DFDE006B119C /* Tools */,
 				9DE1F3B91F036952006B119C /* Controller */,
@@ -307,6 +340,17 @@
 				9D4C21AC1F08DCBF00B1685A /* YJProductDetailTopView.swift */,
 				9D4C21AE1F08DF1200B1685A /* YJDetailCollectionViewCell.swift */,
 				9D4C21AF1F08DF1200B1685A /* YJDetailCollectionViewCell.xib */,
+				9D4C21B21F0936EE00B1685A /* YJProductBottomView.swift */,
+				9D4C21B41F09381C00B1685A /* YJDetailChoiceButtonView.swift */,
+				9D4C21B81F09395100B1685A /* YJDetailChoiceButtonView.xib */,
+				9D4C21BA1F093D1F00B1685A /* YJCommentCell.swift */,
+				9D4C21BB1F093D1F00B1685A /* YJCommentCell.xib */,
+				9D4C21BE1F0A395600B1685A /* YJTmallViewController.swift */,
+				9D4C21C01F0A4BDA00B1685A /* YJActionSheet.swift */,
+				9D4C21C21F0A50DB00B1685A /* YJShareButtonView.swift */,
+				9D4C21C71F0A998D00B1685A /* YJSortTableView.swift */,
+				9D4C21CB1F0A9E9100B1685A /* YJSortCell.swift */,
+				9D4C21CC1F0A9E9100B1685A /* YJSortCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -466,13 +510,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4C21CE1F0A9E9100B1685A /* YJSortCell.xib in Resources */,
 				9DE1F3AE1F035DB6006B119C /* LaunchScreen.storyboard in Resources */,
 				9D4C21A91F08D78F00B1685A /* YJProductDetailToolBar.xib in Resources */,
 				9D4C21A31F08D1A700B1685A /* YJCollectionViewCell.xib in Resources */,
+				9D4C21B91F09395100B1685A /* YJDetailChoiceButtonView.xib in Resources */,
 				9DE1F3AB1F035DB6006B119C /* Assets.xcassets in Resources */,
 				9D4C21B11F08DF1200B1685A /* YJDetailCollectionViewCell.xib in Resources */,
 				9DE1F3A91F035DB6006B119C /* Main.storyboard in Resources */,
 				9D4C21911F05F9D300B1685A /* YJLoginViewController.xib in Resources */,
+				9D4C21BD1F093D1F00B1685A /* YJCommentCell.xib in Resources */,
 				9D4C21831F05536300B1685A /* YJHomeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +579,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D4C21C61F0A52E700B1685A /* YJVerticalButton.swift in Sources */,
+				9D4C21BF1F0A395600B1685A /* YJTmallViewController.swift in Sources */,
 				9D4C219D1F089C1D00B1685A /* YJSearchController.swift in Sources */,
 				9D4C21A71F08D72A00B1685A /* YJProductDetailToolBar.swift in Sources */,
 				9DE1F3E31F040CBD006B119C /* YJCollectionPost.swift in Sources */,
@@ -542,25 +591,32 @@
 				9DE1F3A61F035DB5006B119C /* ViewController.swift in Sources */,
 				9D4C21AD1F08DCBF00B1685A /* YJProductDetailTopView.swift in Sources */,
 				9DE1F3D91F03F76F006B119C /* YJSearchResult.swift in Sources */,
+				9D4C21C81F0A998D00B1685A /* YJSortTableView.swift in Sources */,
 				9D4C21A51F08D69200B1685A /* YJProductDetailViewController.swift in Sources */,
+				9D4C21CD1F0A9E9100B1685A /* YJSortCell.swift in Sources */,
 				9D4C21AB1F08DC1C00B1685A /* YJDetailScrollView.swift in Sources */,
 				9DE1F3E11F040CA1006B119C /* YJCollection.swift in Sources */,
 				9DE1F3BB1F036979006B119C /* YJTabBarController.swift in Sources */,
 				9D4C21991F08983D00B1685A /* YJCategoryController.swift in Sources */,
+				9D4C21C11F0A4BDA00B1685A /* YJActionSheet.swift in Sources */,
 				9D4C218F1F05F8ED00B1685A /* YJRegisterViewController.swift in Sources */,
+				9D4C21B31F0936EE00B1685A /* YJProductBottomView.swift in Sources */,
 				9D4C21971F08980800B1685A /* YJDanpingController.swift in Sources */,
 				9DE1F3DF1F040952006B119C /* YJComment.swift in Sources */,
 				9DE1F3E51F040CD2006B119C /* YJGroup.swift in Sources */,
 				9DE1F3D71F03EB33006B119C /* YJHomeItem.swift in Sources */,
 				9D4C21B01F08DF1200B1685A /* YJDetailCollectionViewCell.swift in Sources */,
+				9D4C21BC1F093D1F00B1685A /* YJCommentCell.swift in Sources */,
 				9D4C217D1F05486900B1685A /* YJNewfeatureController.swift in Sources */,
 				9DE1F3DB1F03F7F0006B119C /* YJProduct.swift in Sources */,
 				9D4C217F1F054FCA00B1685A /* YJTopicViewController.swift in Sources */,
 				9DE1F3D11F03DC47006B119C /* YJChannel.swift in Sources */,
 				9D4C217B1F0541A200B1685A /* YJNavigationController.swift in Sources */,
+				9D4C21C31F0A50DB00B1685A /* YJShareButtonView.swift in Sources */,
 				9D4C21851F055C6800B1685A /* UIView+Extension.swift in Sources */,
 				9D4C21821F05536200B1685A /* YJHomeCell.swift in Sources */,
 				9DE1F3CF1F03DA4B006B119C /* YJHomeController.swift in Sources */,
+				9D4C21B51F09381C00B1685A /* YJDetailChoiceButtonView.swift in Sources */,
 				9D4C219B1F0898D200B1685A /* YJMyViewController.swift in Sources */,
 				9DE1F3DD1F04064E006B119C /* YJProductDetailData.swift in Sources */,
 				9D4C218D1F05F82D00B1685A /* YJLoginViewController.swift in Sources */,

@@ -36,6 +36,24 @@ class YJProductDetailTopView: UIView ,UICollectionViewDelegate,UICollectionViewD
 			make.centerX.equalTo(self)
 			make.centerY.equalTo(colletionView.snp.bottom).offset(-20)
 		}
+		titileLabel.snp.makeConstraints { (make) in
+			make.top.equalTo(colletionView.snp.bottom).offset(5)
+			make.left.equalTo(self).offset(5)
+			make.right.equalTo(self).offset(-5)
+			make.height.equalTo(30)
+		}
+		priceLabel.snp.makeConstraints { (make) in
+			make.left.equalTo(titileLabel.snp.left)
+			make.right.equalTo(titileLabel.snp.right)
+			make.top.equalTo(titileLabel.snp.bottom).offset(5)
+			make.height.equalTo(25)
+		}
+		describeLable.snp.makeConstraints { (make) in
+			make.left.equalTo(titileLabel.snp.left)
+			make.right.equalTo(priceLabel.snp.right)
+			make.top.equalTo(priceLabel.snp.bottom).offset(5)
+			make.bottom.equalTo(self).offset(-5)
+		}
 	}
 	
 	private lazy var colletionView: UICollectionView = {

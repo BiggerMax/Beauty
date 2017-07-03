@@ -8,28 +8,72 @@
 
 import UIKit
 
-class YJDanpingController: YJBaseViewController {
+let collectionCellID = "YJCollectionCellID"
 
+class YJDanpingController: YJBaseViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,YJCollectionViewCellDelegate {
+	
+	var products = [YJProduct]()
+	
+	var collectionView: UICollectionView?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+		setupCollectionView()
+		weak var weakSelf = self
+		YJNetworkTool.shareNetworkTool.loadProductData { (products) in
+			weakSelf!.products = products
+			weakSelf!.collectionView!.reloadData()
+		}
     }
+	func setupCollectionView() {
+		let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+		collectionView.delegate = self
+		collectionView.dataSource = self
+		collectionView.backgroundColor = view.backgroundColor
+		let nib = UINib(nibName: String(describing:YJCollectionViewCell.self), bundle: nil)
+		collectionView.register(nib, forCellWithReuseIdentifier: collectionCellID)
+		view.addSubview(collectionView)
+		self.collectionView = collectionView
+	}
+	// MARK: -UICollectionView
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return products.count
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellID, for: indexPath) as! YJCollectionViewCell
+		cell.product = products[indexPath.item]
+		cell.delegate = self
+		return cell
+	}
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let productDetailVC = YJProductDetailViewController()
+		productDetailVC.title = "商品详情"
+		productDetailVC.product = products[indexPath.item]
+		navigationController?.pushViewController(productDetailVC, animated: true)
+	}
+	
+	// MARK: flowout
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		let width: CGFloat = (UIScreen.main.bounds.width - 20) / 2
+		let height: CGFloat = 245
+		return CGSize(width: width, height: height)
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+		return UIEdgeInsetsMake(5, 5, 5, 5)
+	}
+	
+	//MARK: collectionviewcell
+	func collectionViewCellDidClickedLikeButton(button: UIButton) {
+		if !UserDefaults.standard.bool(forKey: isLogin){
+			let loginVC = YJLoginViewController()
+			loginVC.title = "登录"
+			let nav = YJNavigationController(rootViewController: loginVC)
+			present(nav, animated: true, completion: nil)
+		}
+	}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

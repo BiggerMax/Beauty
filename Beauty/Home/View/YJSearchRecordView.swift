@@ -15,7 +15,7 @@ class YJSearchRecordView: UIView {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		//搜索页面数据获取热搜关键词
-		YJNetworkTool.shareInstance.loadHotWords { (hot_words) in
+		YJNetworkTool.shareNetworkTool.loadHotWords { (hot_words) in
 			self.words = hot_words
 			self.setupUI()
 		}

@@ -21,7 +21,7 @@ class YJTopicViewController: UITableViewController,YJHomeCellDelegate {
 			setupTableView()
 			refreshControl?.addTarget(self, action: #selector(loadHomeData), for: .valueChanged)
 			//获取首页数据
-			YJNetworkTool.shareInstance.loadHomeInfo(id: type) { (homeItems) in
+			YJNetworkTool.shareNetworkTool.loadHomeInfo(id: type) { (homeItems) in
 				self.items = homeItems
 				self.tableView.reloadData()
 			}
@@ -29,7 +29,7 @@ class YJTopicViewController: UITableViewController,YJHomeCellDelegate {
 		}
 	func loadHomeData(){
 		weak var weakSelf = self
-		YJNetworkTool.shareInstance.loadHomeInfo(id: type) { (homeItems) in
+		YJNetworkTool.shareNetworkTool.loadHomeInfo(id: type) { (homeItems) in
 			weakSelf!.items = homeItems
 			weakSelf!.tableView.reloadData()
 			weakSelf!.refreshControl?.endRefreshing()

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="qGe-Tc-f5Z" customClass="YJCommentCell" customModule="Beauty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qGe-Tc-f5Z" id="ZHs-fC-6o7">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Me_AvatarPlaceholder_75x75_" translatesAutoresizingMaskIntoConstraints="NO" id="K4o-R6-3nP">
+                        <rect key="frame" x="10" y="10" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="03Z-EZ-djD"/>
+                            <constraint firstAttribute="width" constant="32" id="0JS-Vd-cA9"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2s-bn-uOU">
+                        <rect key="frame" x="52" y="10" width="36" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Qmm-Pv-q0X"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvA-DK-AdS">
+                        <rect key="frame" x="52" y="32" width="258" height="32"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmN-jk-j6g">
+                        <rect key="frame" x="277" y="10" width="33" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="xaP-Jb-azN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZC8-hp-dvJ">
+                        <rect key="frame" x="52" y="63" width="260" height="1"/>
+                        <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="KH1-Ci-zz3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ZC8-hp-dvJ" secondAttribute="bottom" id="0we-mm-hL4"/>
+                    <constraint firstItem="qvA-DK-AdS" firstAttribute="leading" secondItem="S2s-bn-uOU" secondAttribute="leading" id="20e-lj-CXI"/>
+                    <constraint firstItem="ZC8-hp-dvJ" firstAttribute="leading" secondItem="qvA-DK-AdS" secondAttribute="leading" id="2bn-qt-hQN"/>
+                    <constraint firstItem="qvA-DK-AdS" firstAttribute="top" secondItem="S2s-bn-uOU" secondAttribute="bottom" constant="5" id="D1Z-u7-h8E"/>
+                    <constraint firstItem="S2s-bn-uOU" firstAttribute="top" secondItem="K4o-R6-3nP" secondAttribute="top" id="D9k-9V-xRA"/>
+                    <constraint firstItem="K4o-R6-3nP" firstAttribute="leading" secondItem="ZHs-fC-6o7" secondAttribute="leading" constant="10" id="EVY-dE-luW"/>
+                    <constraint firstAttribute="trailing" secondItem="qvA-DK-AdS" secondAttribute="trailing" constant="10" id="Eag-Sq-RXi"/>
+                    <constraint firstItem="lmN-jk-j6g" firstAttribute="top" secondItem="ZHs-fC-6o7" secondAttribute="top" constant="10" id="OfR-1w-qaX"/>
+                    <constraint firstItem="S2s-bn-uOU" firstAttribute="leading" secondItem="K4o-R6-3nP" secondAttribute="trailing" constant="10" id="Pd5-1P-NGG"/>
+                    <constraint firstAttribute="bottom" secondItem="qvA-DK-AdS" secondAttribute="bottom" id="V8A-mu-3jG"/>
+                    <constraint firstItem="qvA-DK-AdS" firstAttribute="trailing" secondItem="lmN-jk-j6g" secondAttribute="trailing" id="Z6u-tw-lth"/>
+                    <constraint firstItem="K4o-R6-3nP" firstAttribute="top" secondItem="ZHs-fC-6o7" secondAttribute="top" constant="10" id="mgT-xy-HYu"/>
+                    <constraint firstAttribute="trailing" secondItem="ZC8-hp-dvJ" secondAttribute="trailing" constant="8" id="zVw-AR-ZdG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageVIew" destination="K4o-R6-3nP" id="QfJ-Wn-2UJ"/>
+                <outlet property="contentLabel" destination="qvA-DK-AdS" id="imn-db-hvY"/>
+                <outlet property="nicknameLabel" destination="S2s-bn-uOU" id="DT1-09-GTt"/>
+                <outlet property="timeLabel" destination="lmN-jk-j6g" id="gcg-WN-Lqk"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Me_AvatarPlaceholder_75x75_" width="75" height="75"/>
+    </resources>
+</document>

@@ -12,31 +12,36 @@ import SVProgressHUD
 import SwiftyJSON
 
 class YJNetworkTool: NSObject {
-	static let shareInstance = YJNetworkTool()
+ static let shareNetworkTool = YJNetworkTool()
 	
-	//获取首页数据
-	func loadHomeInfo(id: Int , finished:@escaping (_ homeItems:[YJHomeItem]) -> ()) {
+	/// 获取首页数据
+	func loadHomeInfo(id: Int, finished:@escaping (_ homeItems: [YJHomeItem]) -> ()) {
+		//        let url = BASE_URL + "v1/channels/\(id)/items?gender=1&generation=1&limit=20&offset=0"
 		let url = BASE_URL + "v1/channels/\(id)/items"
-		let params = ["gender":1,"generation":1,"limit":20,"offset":0]
+		let params = ["gender": 1,
+		              "generation": 1,
+		              "limit": 20,
+		              "offset": 0]
 		Alamofire
 			.request(url, parameters: params)
 			.responseJSON { (response) in
 				guard response.result.isSuccess else {
-					SVProgressHUD.showError(withStatus: "加载失败")
+					SVProgressHUD.showError(withStatus: "加载失败...")
 					return
 				}
-				if let value = response.result.value{
+				if let value = response.result.value {
 					let dict = JSON(value)
-					let code = dict["code"]
+					let code = dict["code"].intValue
 					let message = dict["message"].stringValue
-					guard code == 200 else{
+					guard code == 200 else {
 						SVProgressHUD.showInfo(withStatus: message)
 						return
 					}
 					let data = dict["data"].dictionary
-					if let items = data!["items"]?.arrayObject{
+					//  字典转成模型
+					if let items = data!["items"]?.arrayObject {
 						var homeItems = [YJHomeItem]()
-						for item in items{
+						for item in items {
 							let homeItem = YJHomeItem(dict: item as! [String: AnyObject])
 							homeItems.append(homeItem)
 						}
@@ -46,42 +51,43 @@ class YJNetworkTool: NSObject {
 		}
 	}
 	
-	//获取首页顶部选择数据
-	func loadHomeTopData(finished:@escaping (_ home_channels:[YJChannel]) -> ()){
+	/// 获取首页顶部选择数据
+	func loadHomeTopData(finished:@escaping (_ ym_channels: [YJChannel]) -> ()) {
 		
 		let url = BASE_URL + "v2/channels/preset"
-		let params = ["gender":1,"generation":1]
+		let params = ["gender": 1,
+		              "generation": 1]
 		Alamofire
-			.request(url, parameters : params)
+			.request(url, parameters: params)
 			.responseJSON { (response) in
-				guard response.result.isSuccess else{
+				guard response.result.isSuccess else {
 					SVProgressHUD.showError(withStatus: "加载失败...")
 					return
 				}
-				if let value = response.result.value{
+				if let value = response.result.value {
 					let dict = JSON(value)
 					let code = dict["code"].intValue
 					let message = dict["message"].stringValue
-					guard code == 200 else{
+					guard code == 200 else {
 						SVProgressHUD.showInfo(withStatus: message)
 						return
 					}
 					SVProgressHUD.dismiss()
 					let data = dict["data"].dictionary
-					if let channels = data!["channels"]?.arrayObject{
-						var yj_channels = [YJChannel]()
-						for channel in channels{
-							let yj_channel = YJChannel(dict: channel as! [String :AnyObject])
-							yj_channels.append(yj_channel)
+					if let channels = data!["channels"]?.arrayObject {
+						var ym_channels = [YJChannel]()
+						for channel in channels {
+							let ym_channel = YJChannel(dict: channel as! [String: AnyObject])
+							ym_channels.append(ym_channel)
 						}
-						finished(yj_channels)
+						finished(ym_channels)
 					}
-					
 				}
 		}
 	}
 	
-	func loadHotWords(finished:@escaping(_ words: [String]) -> ()){
+	/// 搜索界面数据
+	func loadHotWords(finished:@escaping (_ words: [String]) -> ()) {
 		SVProgressHUD.show(withStatus: "正在加载...")
 		let url = BASE_URL + "v1/search/hot_words"
 		Alamofire
@@ -107,48 +113,48 @@ class YJNetworkTool: NSObject {
 					}
 				}
 		}
-
 	}
 	
-	//根据搜索条件进行搜索
-	func loadSearchResult(keyword: String,sort : String,finished:@escaping(_ results:[YJSearchResult]) -> ()) {
+	/// 根据搜索条件进行搜索
+	func loadSearchResult(keyword: String, sort: String, finished:@escaping (_ results: [YJSearchResult]) -> ()) {
 		SVProgressHUD.show(withStatus: "正在加载...")
 		let url = "http://api.dantangapp.com/v1/search/item"
 		
-		let paramers = ["keyword": keyword,
-		                "limit": 20,
-		                "offset": 0,
-		"sort": sort] as [String : AnyObject]
-		
+		let params = ["keyword": keyword,
+		              "limit": 20,
+		              "offset": 0,
+		              "sort": sort] as [String : Any]
 		Alamofire
-			.request(url, parameters:paramers)
+			.request(url, parameters: params)
 			.responseJSON { (response) in
-				guard response.result.isSuccess else{
+				guard response.result.isSuccess else {
 					SVProgressHUD.showError(withStatus: "加载失败...")
 					return
 				}
-				if let value = response.result.value{
-					let dic = JSON(value)
-					let code = dic["code"].intValue
-					let message = dic["message"].stringValue
-					guard code == 200 else{
-						SVProgressHUD.show(withStatus: message)
+				if let value = response.result.value {
+					let dict = JSON(value)
+					let code = dict["code"].intValue
+					let message = dict["message"].stringValue
+					guard code == 200 else {
+						SVProgressHUD.showInfo(withStatus: message)
 						return
 					}
 					SVProgressHUD.dismiss()
-					let data = dic["data"].dictionary
-					if let items = data!["items"]?.arrayObject{
+					let data = dict["data"].dictionary
+					if let items = data!["items"]?.arrayObject {
 						var results = [YJSearchResult]()
-						for item in items{
-							let result = YJSearchResult(dict:item as! [String:AnyObject])
+						for item in items {
+							let result = YJSearchResult(dict: item as! [String: AnyObject])
 							results.append(result)
 						}
+						finished(results)
 					}
 				}
 		}
 	}
-	//获取单品数据
-	func loadProduceData(finished:@escaping (_ productes:[YJProduct]) -> () ){
+	
+	/// 获取单品数据
+	func loadProductData(finished:@escaping (_ products: [YJProduct]) -> ()) {
 		SVProgressHUD.show(withStatus: "正在加载...")
 		let url = BASE_URL + "v2/items"
 		let params = ["gender": 1,
@@ -156,67 +162,68 @@ class YJNetworkTool: NSObject {
 		              "limit": 20,
 		              "offset": 0]
 		Alamofire
-			.request(url, parameters:params)
+			.request(url, parameters: params)
 			.responseJSON { (response) in
-				guard response.result.isSuccess else{
+				guard response.result.isSuccess else {
 					SVProgressHUD.showError(withStatus: "加载失败...")
 					return
 				}
-				if let value = response.result.value{
+				if let value = response.result.value {
 					let dict = JSON(value)
 					let code = dict["code"].intValue
 					let message = dict["message"].stringValue
-					guard code == 200 else{
-						SVProgressHUD.show(withStatus: message)
+					guard code == 200 else {
+						SVProgressHUD.showInfo(withStatus: message)
 						return
 					}
 					SVProgressHUD.dismiss()
-					if let data = dict["data"].dictionary{
-					if let items = data["items"]?.arrayObject{
-						var products = [YJProduct]()
-						for item in items{
-							let itemDict = item as! [String : AnyObject]
-							if let itemData = itemDict["data"]{
-								let product = YJProduct(dict: itemData as! [String:AnyObject])
-								products.append(product)
+					if let data = dict["data"].dictionary {
+						if let items = data["items"]?.arrayObject {
+							var products = [YJProduct]()
+							for item in items {
+								let itemDict = item as! [String : AnyObject]
+								if let itemData = itemDict["data"] {
+									let product = YJProduct(dict: itemData as! [String: AnyObject])
+									products.append(product)
+								}
 							}
+							finished(products)
 						}
-						finished(products)
 					}
 				}
-			}
-		}
-	}
-	//获取单品详情
-	func loadProductDetailData(id : Int , finished:@escaping (_ productDetail : YJProductDetailData) -> ()){
-		SVProgressHUD.show(withStatus: "正在加载...")
-		let url = BASE_URL + "v2/items/\(id)"
-		Alamofire
-				.request(url)
-				.responseJSON { (response) in
-					guard response.result.isSuccess else{
-						SVProgressHUD.showError(withStatus: "加载失败...")
-						return
-					}
-					if let value = response.result.value{
-						let dict = JSON(value)
-						let code = dict["code"].intValue
-						let message = dict["message"].stringValue
-						guard code == 200 else{
-							SVProgressHUD.show(withStatus: message)
-							return
-						}
-						SVProgressHUD.dismiss()
-						if let data = dict["data"].dictionaryObject{
-							let productDetail = YJProductDetailData(dict: data as [String : AnyObject])
-							finished(productDetail)
-						
-					}
 		}
 	}
 	
-	//商品评论
-	func loadProductDetailComments(id : Int,finished:@escaping (_ comment : [YJComment]) -> ()){
+	/// 获取单品详情数据
+	func loadProductDetailData(id: Int, finished:@escaping (_ productDetail: YJProductDetailData) -> ()) {
+		SVProgressHUD.show(withStatus: "正在加载...")
+		let url = BASE_URL + "v2/items/\(id)"
+		Alamofire
+			.request(url)
+			.responseJSON { (response) in
+				guard response.result.isSuccess else {
+					SVProgressHUD.showError(withStatus: "加载失败...")
+					return
+				}
+				if let value = response.result.value {
+					let dict = JSON(value)
+					let code = dict["code"].intValue
+					let message = dict["message"].stringValue
+					guard code == 200 else {
+						SVProgressHUD.showInfo(withStatus: message)
+						return
+					}
+					SVProgressHUD.dismiss()
+					if let data = dict["data"].dictionaryObject {
+						let productDetail = YJProductDetailData(dict: data as [String : AnyObject])
+						finished(productDetail)
+					}
+				}
+		}
+	}
+	
+	/// 商品详情 评论
+	func loadProductDetailComments(id: Int, finished:@escaping (_ comments: [YJComment]) -> ()) {
 		SVProgressHUD.show(withStatus: "正在加载...")
 		let url = BASE_URL + "v2/items/\(id)/comments"
 		let params = ["limit": 20,
@@ -224,23 +231,23 @@ class YJNetworkTool: NSObject {
 		Alamofire
 			.request(url, parameters: params)
 			.responseJSON { (response) in
-				guard response.result.isSuccess else{
+				guard response.result.isSuccess else {
 					SVProgressHUD.showError(withStatus: "加载失败...")
-					return;
+					return
 				}
-				if let value = response.result.value{
+				if let value = response.result.value {
 					let dict = JSON(value)
 					let code = dict["code"].intValue
 					let message = dict["message"].stringValue
-					guard code == 200 else{
+					guard code == 200 else {
 						SVProgressHUD.showInfo(withStatus: message)
 						return
 					}
 					SVProgressHUD.dismiss()
-					if let data = dict["data"].dictionary{
-						if let commentData = data["comment"]?.arrayObject{
+					if let data = dict["data"].dictionary {
+						if let commentsData = data["comments"]?.arrayObject {
 							var comments = [YJComment]()
-							for item in commentData{
+							for item in commentsData {
 								let comment = YJComment(dict: item as! [String: AnyObject])
 								comments.append(comment)
 							}
@@ -250,6 +257,7 @@ class YJNetworkTool: NSObject {
 				}
 		}
 	}
+	
 	/// 分类界面 顶部 专题合集
 	func loadCategoryCollection(limit: Int, finished:@escaping (_ collections: [YJCollection]) -> ()) {
 		SVProgressHUD.show(withStatus: "正在加载...")
@@ -400,8 +408,8 @@ class YJNetworkTool: NSObject {
 					}
 				}
 		}
-		}
 	}
+	
+
 
 }
-

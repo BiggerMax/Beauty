@@ -25,7 +25,7 @@ class YJHomeViewController: YJBaseViewController,UIScrollViewDelegate {
 		//设置导航栏
 		setupNav()
 		weak var weakSelf = self
-		YJNetworkTool.shareInstance.loadHomeTopData { (home_channels) in
+		YJNetworkTool.shareNetworkTool.loadHomeTopData { (home_channels) in
 			for channel in home_channels{
 				let vc = YJTopicViewController()
 				vc.title = channel.name!
