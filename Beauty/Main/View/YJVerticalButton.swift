@@ -21,6 +21,7 @@ class YJVerticalButton: UIButton {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		titleLabel?.textAlignment = .center
+		titleLabel?.lineBreakMode = .byTruncatingTail
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -33,10 +34,12 @@ class YJVerticalButton: UIButton {
 		imageView?.y = 0
 		imageView?.width = self.width - 20
 		imageView?.height = imageView!.width
+
 		titleLabel?.x = 0
 		titleLabel?.y = imageView!.height
 		titleLabel?.width = self.width
-		titleLabel?.height = self.height
+		titleLabel?.height = self.height - imageView!.height
+
 	}
 
 }

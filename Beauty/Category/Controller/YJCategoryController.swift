@@ -12,24 +12,35 @@ class YJCategoryController: YJBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+		navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"Feed_SearchBtn_18x18_"), style: .plain, target: self, action: #selector(categoryRightBBClick))
+		setupScrollView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	private func setupScrollView() {
+		view.addSubview(scrollView)
+		let headerViewController = YJCategoryHeaderViewController()
+		addChildViewController(headerViewController)
+		
+		let topBgView = UIView(frame: CGRect(x: 0, y: 0, width: SCREENW, height: 135))
+		scrollView.addSubview(topBgView)
+		
+		let headerVC = childViewControllers[0]
+		topBgView.addSubview(headerVC.view)
+		
+		
+	}
+	func categoryRightBBClick() {
+		let searBarVC = YJSearchController()
+		navigationController?.pushViewController(searBarVC, animated: true)
+	}
+	
+	private lazy var scrollView:UIScrollView = {
+		let scrollView = UIScrollView()
+		scrollView.isScrollEnabled = true
+		scrollView.backgroundColor = GlobalColor()
+		scrollView.frame = CGRect(x: 0, y: 0, width: SCREENW, height: SCREENH)
+		return scrollView
+	}()
+	
+	
 
 }

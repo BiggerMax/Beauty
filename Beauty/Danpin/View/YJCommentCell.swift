@@ -19,6 +19,7 @@ class YJCommentCell: UITableViewCell {
 			}
 			nicknameLabel.text = user!.nickname
 			contentLabel.text = comment!.content
+			timeLabel.text = String(describing: comment!.created_at!)
 		}
 	}
 	@IBOutlet weak var avatarImageVIew: UIImageView!

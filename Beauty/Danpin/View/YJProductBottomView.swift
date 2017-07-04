@@ -40,6 +40,7 @@ class YJProductBottomView: UIView,UITableViewDelegate,UITableViewDataSource,YJDe
 		 choiceButtonView.snp.makeConstraints { (make) in
 			make.size.equalTo(CGSize(width:SCREENW,height: 44))
 			make.top.equalTo(self)
+			make.leading.equalTo(self)
 		}
 		tableView.snp.makeConstraints { (make) in
 			make.top.equalTo(choiceButtonView.snp.bottom)

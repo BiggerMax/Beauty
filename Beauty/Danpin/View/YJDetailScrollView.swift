@@ -38,7 +38,7 @@ class YJDetailScrollView: UIScrollView {
 		bottomScrollView.snp.makeConstraints { (make) in
 			make.left.equalTo(self)
 			make.top.equalTo(topScrollView.snp.bottom).offset(10)
-			make.size.equalTo(CGSize(width: SCREENW, height: SCREENW - 109))
+			make.size.equalTo(CGSize(width: SCREENW, height: SCREENH - 109))
 		}
 	}
 	//顶部视图
