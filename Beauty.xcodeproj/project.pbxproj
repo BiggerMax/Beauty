@@ -59,6 +59,7 @@
 		9D4C21E81F0B854D00B1685A /* YJCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C21E61F0B854D00B1685A /* YJCollectionTableViewCell.xib */; };
 		9D4C21EB1F0B8C0200B1685A /* YJPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21E91F0B8C0200B1685A /* YJPostDetailViewController.swift */; };
 		9D4C21EC1F0B8C0200B1685A /* YJPostDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C21EA1F0B8C0200B1685A /* YJPostDetailViewController.xib */; };
+		9D4C21EE1F0BC42600B1685A /* YJCategoryBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C21ED1F0BC42600B1685A /* YJCategoryBottomView.swift */; };
 		9DE1F3A41F035DB5006B119C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3A31F035DB5006B119C /* AppDelegate.swift */; };
 		9DE1F3A61F035DB5006B119C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE1F3A51F035DB5006B119C /* ViewController.swift */; };
 		9DE1F3A91F035DB6006B119C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DE1F3A71F035DB6006B119C /* Main.storyboard */; };
@@ -135,6 +136,7 @@
 		9D4C21E61F0B854D00B1685A /* YJCollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YJCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		9D4C21E91F0B8C0200B1685A /* YJPostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJPostDetailViewController.swift; sourceTree = "<group>"; };
 		9D4C21EA1F0B8C0200B1685A /* YJPostDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YJPostDetailViewController.xib; sourceTree = "<group>"; };
+		9D4C21ED1F0BC42600B1685A /* YJCategoryBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJCategoryBottomView.swift; sourceTree = "<group>"; };
 		9DE1F3A01F035DB5006B119C /* Beauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE1F3A31F035DB5006B119C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DE1F3A51F035DB5006B119C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				9D4C21E31F0B844600B1685A /* YJCollectionDetailController.xib */,
 				9D4C21E91F0B8C0200B1685A /* YJPostDetailViewController.swift */,
 				9D4C21EA1F0B8C0200B1685A /* YJPostDetailViewController.xib */,
+				9D4C21ED1F0BC42600B1685A /* YJCategoryBottomView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				9DE1F3DB1F03F7F0006B119C /* YJProduct.swift in Sources */,
 				9D4C21E71F0B854D00B1685A /* YJCollectionTableViewCell.swift in Sources */,
 				9D4C21DB1F0B7EF900B1685A /* YJSeeAllViewController.swift in Sources */,
+				9D4C21EE1F0BC42600B1685A /* YJCategoryBottomView.swift in Sources */,
 				9D4C217F1F054FCA00B1685A /* YJTopicViewController.swift in Sources */,
 				9DE1F3D11F03DC47006B119C /* YJChannel.swift in Sources */,
 				9D4C217B1F0541A200B1685A /* YJNavigationController.swift in Sources */,

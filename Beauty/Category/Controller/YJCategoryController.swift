@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YJCategoryController: YJBaseViewController {
+class YJCategoryController: YJBaseViewController,YJCategoryBottomViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,12 @@ class YJCategoryController: YJBaseViewController {
 		let headerVC = childViewControllers[0]
 		topBgView.addSubview(headerVC.view)
 		
-		
+		let bottomBgView = YJCategoryBottomView()
+		bottomBgView.frame = CGRect(x: 0, y: topBgView.frame.maxY + 10, width: SCREENW, height: SCREENH - 160)
+		bottomBgView.backgroundColor = GlobalColor()
+		bottomBgView.delegate = self
+		scrollView.addSubview(bottomBgView)
+		scrollView.contentSize = CGSize(width: SCREENW, height: bottomBgView.frame.maxY)
 	}
 	func categoryRightBBClick() {
 		let searBarVC = YJSearchController()
@@ -40,6 +45,14 @@ class YJCategoryController: YJBaseViewController {
 		scrollView.frame = CGRect(x: 0, y: 0, width: SCREENW, height: SCREENH)
 		return scrollView
 	}()
+	
+	func bottomViewButtonDidClicked(buttton: UIButton) {
+		let collectionDetailVC = YJCollectionDetailController()
+		collectionDetailVC.title = buttton.titleLabel!.text
+		collectionDetailVC.id = buttton.tag
+		collectionDetailVC.type = "风格品类"
+		navigationController?.pushViewController(collectionDetailVC, animated: true)
+	}
 	
 	
 
