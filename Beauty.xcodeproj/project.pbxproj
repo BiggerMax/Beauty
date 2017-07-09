@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		734F42EC6CE7FA6C25855BD5 /* Pods_Beauty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9277F5689D337534470BA70E /* Pods_Beauty.framework */; };
+		9D0F87C01F0E13AA000C305A /* YJMyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F87BF1F0E13AA000C305A /* YJMyHeaderView.swift */; };
+		9D0F87C21F0E1B9E000C305A /* YJMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F87C11F0E1B9E000C305A /* YJMessageViewController.swift */; };
+		9D0F87C41F0E1BA9000C305A /* YJSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F87C31F0E1BA9000C305A /* YJSettingViewController.swift */; };
+		9D0F87C61F0E1C0A000C305A /* YJMyFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F87C51F0E1C0A000C305A /* YJMyFooterView.swift */; };
+		9D0F87C81F0E210D000C305A /* YJChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F87C71F0E210D000C305A /* YJChoiceView.swift */; };
 		9D4C217B1F0541A200B1685A /* YJNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C217A1F0541A200B1685A /* YJNavigationController.swift */; };
 		9D4C217D1F05486900B1685A /* YJNewfeatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C217C1F05486900B1685A /* YJNewfeatureController.swift */; };
 		9D4C217F1F054FCA00B1685A /* YJTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C217E1F054FCA00B1685A /* YJTopicViewController.swift */; };
@@ -85,6 +90,11 @@
 		41F502CEC5D0B78D5D250B4A /* Pods-Beauty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beauty.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beauty/Pods-Beauty.release.xcconfig"; sourceTree = "<group>"; };
 		4EF2437BECDFDBC98D4C9B61 /* Pods-Beauty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beauty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beauty/Pods-Beauty.debug.xcconfig"; sourceTree = "<group>"; };
 		9277F5689D337534470BA70E /* Pods_Beauty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beauty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0F87BF1F0E13AA000C305A /* YJMyHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJMyHeaderView.swift; sourceTree = "<group>"; };
+		9D0F87C11F0E1B9E000C305A /* YJMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJMessageViewController.swift; sourceTree = "<group>"; };
+		9D0F87C31F0E1BA9000C305A /* YJSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJSettingViewController.swift; sourceTree = "<group>"; };
+		9D0F87C51F0E1C0A000C305A /* YJMyFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJMyFooterView.swift; sourceTree = "<group>"; };
+		9D0F87C71F0E210D000C305A /* YJChoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJChoiceView.swift; sourceTree = "<group>"; };
 		9D4C217A1F0541A200B1685A /* YJNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJNavigationController.swift; sourceTree = "<group>"; };
 		9D4C217C1F05486900B1685A /* YJNewfeatureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJNewfeatureController.swift; sourceTree = "<group>"; };
 		9D4C217E1F054FCA00B1685A /* YJTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YJTopicViewController.swift; sourceTree = "<group>"; };
@@ -460,6 +470,8 @@
 			isa = PBXGroup;
 			children = (
 				9D4C219A1F0898D200B1685A /* YJMyViewController.swift */,
+				9D0F87C11F0E1B9E000C305A /* YJMessageViewController.swift */,
+				9D0F87C31F0E1BA9000C305A /* YJSettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -474,6 +486,9 @@
 		9DE1F3CB1F036D70006B119C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9D0F87BF1F0E13AA000C305A /* YJMyHeaderView.swift */,
+				9D0F87C51F0E1C0A000C305A /* YJMyFooterView.swift */,
+				9D0F87C71F0E210D000C305A /* YJChoiceView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -642,12 +657,15 @@
 				9DE1F3B71F0367DB006B119C /* YJConst.swift in Sources */,
 				9D4C21871F05F4AB00B1685A /* YJDetailViewController.swift in Sources */,
 				9DE1F3D51F03DFFB006B119C /* YJNetworkTool.swift in Sources */,
+				9D0F87C81F0E210D000C305A /* YJChoiceView.swift in Sources */,
 				9D4C219F1F08CA2600B1685A /* YJSearchRecordView.swift in Sources */,
 				9DE1F3A61F035DB5006B119C /* ViewController.swift in Sources */,
 				9D4C21AD1F08DCBF00B1685A /* YJProductDetailTopView.swift in Sources */,
 				9DE1F3D91F03F76F006B119C /* YJSearchResult.swift in Sources */,
 				9D4C21C81F0A998D00B1685A /* YJSortTableView.swift in Sources */,
 				9D4C21D71F0B7BEB00B1685A /* YJCategoryCollectionViewCell.swift in Sources */,
+				9D0F87C21F0E1B9E000C305A /* YJMessageViewController.swift in Sources */,
+				9D0F87C01F0E13AA000C305A /* YJMyHeaderView.swift in Sources */,
 				9D4C21A51F08D69200B1685A /* YJProductDetailViewController.swift in Sources */,
 				9D4C21CD1F0A9E9100B1685A /* YJSortCell.swift in Sources */,
 				9D4C21AB1F08DC1C00B1685A /* YJDetailScrollView.swift in Sources */,
@@ -664,11 +682,13 @@
 				9DE1F3E51F040CD2006B119C /* YJGroup.swift in Sources */,
 				9DE1F3D71F03EB33006B119C /* YJHomeItem.swift in Sources */,
 				9D4C21B01F08DF1200B1685A /* YJDetailCollectionViewCell.swift in Sources */,
+				9D0F87C41F0E1BA9000C305A /* YJSettingViewController.swift in Sources */,
 				9D4C21BC1F093D1F00B1685A /* YJCommentCell.swift in Sources */,
 				9D4C217D1F05486900B1685A /* YJNewfeatureController.swift in Sources */,
 				9D4C21EB1F0B8C0200B1685A /* YJPostDetailViewController.swift in Sources */,
 				9DE1F3DB1F03F7F0006B119C /* YJProduct.swift in Sources */,
 				9D4C21E71F0B854D00B1685A /* YJCollectionTableViewCell.swift in Sources */,
+				9D0F87C61F0E1C0A000C305A /* YJMyFooterView.swift in Sources */,
 				9D4C21DB1F0B7EF900B1685A /* YJSeeAllViewController.swift in Sources */,
 				9D4C21EE1F0BC42600B1685A /* YJCategoryBottomView.swift in Sources */,
 				9D4C217F1F054FCA00B1685A /* YJTopicViewController.swift in Sources */,
